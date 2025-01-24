@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:20:36 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:52:31 by ufo              ###   ########.fr       */
+/*   Created: 2025/01/21 20:38:59 by ufo               #+#    #+#             */
+/*   Updated: 2025/01/22 18:09:55 by ufo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_H
+#define HUMANB_H
 
-int main(){
-    Zombie test = Zombie("lox");
-    test.announce();
-    test.randomChump("chumper");
-    Zombie *newTest = test.newZombie("newZomb");
-    delete(newTest);
-}
+#include "Weapon.hpp"
+
+class HumanB {
+    private:
+        std::string _name;
+        Weapon *_weapon;
+    public:
+        //Constructors:
+        HumanB();
+        HumanB( std::string name );
+        ~HumanB();
+        
+        //Methods:
+        void attack( void );
+        void setWeapon( Weapon *newWeapon);
+};
+# endif

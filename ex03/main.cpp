@@ -5,17 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:20:36 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:52:31 by ufo              ###   ########.fr       */
+/*   Created: 2025/01/21 15:57:52 by ufo               #+#    #+#             */
+/*   Updated: 2025/01/22 18:12:04 by ufo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include <iostream>
+# include <string>
+# include "HumanA.hpp"
+# include "HumanB.hpp"
 
-int main(){
-    Zombie test = Zombie("lox");
-    test.announce();
-    test.randomChump("chumper");
-    Zombie *newTest = test.newZombie("newZomb");
-    delete(newTest);
+int main()
+{
+	{
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("some other type of club");
+	bob.attack();
+	}
+	{
+	Weapon club = Weapon("crude spiked club");
+	HumanB jim("Jim");
+	// jim.(club);
+	jim.setWeapon(&club);
+	jim.attack();
+	club.setType("some other type of club");
+	jim.attack();
+	}
+	return 0;
 }

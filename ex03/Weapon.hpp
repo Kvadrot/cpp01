@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:20:36 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:52:31 by ufo              ###   ########.fr       */
+/*   Created: 2025/01/21 20:39:30 by ufo               #+#    #+#             */
+/*   Updated: 2025/01/22 18:09:26 by ufo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_H
+#define WEAPON_H
 
-int main(){
-    Zombie test = Zombie("lox");
-    test.announce();
-    test.randomChump("chumper");
-    Zombie *newTest = test.newZombie("newZomb");
-    delete(newTest);
-}
+# include <iostream>
+# include <string>
+
+
+class Weapon {
+    private:
+        std::string _type;
+    
+    public:
+    
+    //Constructors:
+        Weapon();
+        Weapon(std::string type);
+        ~Weapon();
+
+    //Methods:
+        const std::string& getType( void );
+        void setType( std::string type );
+};
+
+#endif

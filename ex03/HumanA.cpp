@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:20:36 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:52:31 by ufo              ###   ########.fr       */
+/*   Created: 2025/01/21 21:07:58 by ufo               #+#    #+#             */
+/*   Updated: 2025/01/22 18:14:15 by ufo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-int main(){
-    Zombie test = Zombie("lox");
-    test.announce();
-    test.randomChump("chumper");
-    Zombie *newTest = test.newZombie("newZomb");
-    delete(newTest);
+#include "HumanA.hpp"
+// Constructors:
+HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon), _name (name)
+{
+    this->_name = name;
+    this->_weapon = weapon;
 }
+
+HumanA::~HumanA()
+{
+    
+}
+
+// Methods
+void HumanA::attack( void )
+{
+    std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
+}
+
+
+
