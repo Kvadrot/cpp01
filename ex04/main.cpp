@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: itykhono <itykhono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:57:52 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/24 12:41:39 by ufo              ###   ########.fr       */
+/*   Updated: 2025/03/26 14:16:05 by itykhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "main.hpp"
 
 void customReplace(std::string s1, std::string s2, std::string &content) {
     size_t pos = 0;
@@ -36,17 +34,17 @@ std::string* readFile(std::ifstream& file) {
     if (file.fail() && !file.eof()) {
         std::cerr << "An error occurred during reading." << std::endl;
         delete content;
-        return nullptr;
+        return (NULL);
     }
 
-    return content;
+    return (content);
 }
 
 bool validateInput(int argc) {
     if (argc != 4) {
-        return false;
+        return (false);
     } else {
-        return true;
+        return (true);
     }
 }
 
@@ -56,25 +54,25 @@ int main(int argc, char *argv[]) {
     
     if (!validateInput(argc)) {
         std::cout << "Input parameters amount error\n exmp: inputFileName s1 s2\n";
-        return 1;
+        return (1);
     }
 
     inputFileName = argv[1];
-    std::ifstream file(inputFileName);
-    std::ofstream outFile(inputFileName + ".replace");
+    std::ifstream file(inputFileName.c_str());
+    std::ofstream outFile((inputFileName + ".replace").c_str());
 
     if (!file.is_open()) {
         std::cerr << "Error occurred during reading the file: " << inputFileName << std::endl;
-        return 2;  
+        return (2);  
     }
     if (!outFile.is_open()) {
         std::cerr << "Error occurred during opening the output file." << std::endl;
-        return 3;  
+        return (3);  
     }
 
     content = readFile(file);
-    if (content == nullptr) {
-        return 4;
+    if (content == NULL) {
+        return (4);
     }
 
     customReplace(argv[2], argv[3], *content);
@@ -83,5 +81,5 @@ int main(int argc, char *argv[]) {
     // Files will be automatically closed when they go out of scope
     delete content;
 
-    return 0;
+    return (0);
 }

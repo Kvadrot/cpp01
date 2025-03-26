@@ -1,7 +1,7 @@
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-SRC =	main.cpp	\
+SRC =	main.cpp\
 
 
 OBJFILES = $(SRC:.cpp=.o)
