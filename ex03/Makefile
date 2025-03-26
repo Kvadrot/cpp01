@@ -8,7 +8,7 @@ SRC = 	main.cpp	\
 
 OBJFILES = $(SRC:.cpp=.o)
 
-NAME = ptrref
+NAME = HumanBattle
 
 all: $(NAME)
 
