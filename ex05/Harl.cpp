@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: itykhono <itykhono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 18:21:44 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/24 10:41:29 by ufo              ###   ########.fr       */
+/*   Updated: 2025/03/26 15:01:16 by itykhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void Harl:: _error( void ) {
 }
 
 void Harl:: complain( std::string level ) {
-    std::string levelNamesArr[4] = { "DEBUG", "INFO", "WARING", "ERROR" };
-    void (Harl::*funcPtr[4])() = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+    std::string levelNamesArr[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+    void (Harl::*funcPtr[4])() = { &Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error };
     
     for (int i = 0; i < 4; i++) {
         if (level == levelNamesArr[i]) {
