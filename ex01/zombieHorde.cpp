@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: itykhono <itykhono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:28:53 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:10:50 by ufo              ###   ########.fr       */
+/*   Updated: 2025/03/25 16:48:06 by itykhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name )
+Zombie* zombieHorde( int n, std::string name )
 {
     Zombie* zArray;
-    zArray = new Zombie[N];
+    zArray = new Zombie[n];
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
     {
         Zombie newZomb = Zombie(name);
         zArray[i] = newZomb;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: itykhono <itykhono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 10:14:34 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:11:13 by ufo              ###   ########.fr       */
+/*   Updated: 2025/03/25 16:47:37 by itykhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ class Zombie {
         void randomChump( std::string name );
 };
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde( int n, std::string name );
 
