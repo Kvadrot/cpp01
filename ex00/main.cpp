@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ufo <ufo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: itykhono <itykhono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:20:36 by ufo               #+#    #+#             */
-/*   Updated: 2025/01/21 15:52:31 by ufo              ###   ########.fr       */
+/*   Updated: 2025/03/26 10:51:50 by itykhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int main(){
     test.announce();
     test.randomChump("chumper");
     Zombie *newTest = test.newZombie("newZomb");
-    delete(newTest);
+	newTest = NULL;
 }
